@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="col-lg-3 col-md-3 col-sm-3"></div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <br><br><br><br><br><br><br><br><br>
+      <div class="well bs-component">
+        <form class="form-horizontal" (submit)="redirect(username.value,password.value)">
+          <fieldset>
+            <legend class="text-center">Login</legend>
+            <div class="form-group {{uinvalid}}">
+              <label for="inputEmail" class="col-lg-2 control-label">Username</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" placeholder="username" required #username>
+              </div>
+            </div>
+            <div class="form-group {{pinvalid}}">
+              <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" placeholder="Password" required #password>
+              </div>
+            </div>
+
+            <div class="form-group" *ngIf=valid>
+              <div class="col-lg-10 col-lg-offset-2 text-center">
+                <span class="text-danger  bg-danger"> username or password invalid</span><br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-danger">Cancel</button>
+                <button type="submit" class="btn btn-success pull-right">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,43 @@
+
+<ul>
+  <h1>Profile for {{user.name}}</h1>
+  <li>Age : {{user.age}}</li>
+  <li>Email : {{user.email}}</li>
+  <li>Date of Birth : {{user.dob}}</li>
+  <li>Address : {{user.address.street}} , {{user.address.city}} , {{user.address.state}}.</li>
+  <li>Hobbies : <div *ngFor="let hobby of user.hobbies"> - {{hobby}}</div></li>
+</ul>
+
+<button (click)="toggleEdit()">Edit Profile</button>
+
+<div *ngIf=isEdit>
+  <h1>Alter Variables</h1>
+  <form>
+    <div>
+      <label for="name">Name : </label>
+      <input type="text" [(ngModel)]="user.name" name="name"/>
+    </div>
+    <hr>
+    <div>
+      <label for="age">Age : </label>
+      <input type="number" [(ngModel)]="user.age" name="age"/>
+    </div>
+    <hr>
+    <div>
+      <label for="dob">D.O.B : </label>
+      <input type="text" [(ngModel)]="user.dob" name="dob"/>
+    </div>
+    <hr>
+    <div>
+      <label for="email">Email : </label>
+      <input type="text" [(ngModel)]="user.email" name="email"/>
+    </div>
+    <hr>
+    <div>
+      <label for="address">Address : </label>
+      <input type="text" [(ngModel)]="user.address.street" name="address"/> ,
+      <input type="text" [(ngModel)]="user.address.city" name="address"/> ,
+      <input type="text" [(ngModel)]="user.address.state" name="address"/>
+    </div>
+  </form>
+</div>
